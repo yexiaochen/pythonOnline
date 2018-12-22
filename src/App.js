@@ -74,7 +74,7 @@ class App extends Component {
       errArray.forEach(function (err, index) {
         output.innerHTML += `Error - ${index} : ${err.v || err}`
       })
-      console.log('err', err)
+      // console.log('err', err)
     })
     function outf(text) {
       output.innerHTML = output.innerHTML + text;
@@ -84,7 +84,6 @@ class App extends Component {
         throw "File not found: '" + x + "'";
       }
       return Sk.builtinFiles["files"][x];
-      console.log('%c value => ', 'color:#da493b; font-size: 18px', );
     }
   }
   getImageData(canvas) {
@@ -168,35 +167,35 @@ class App extends Component {
     const self = this;
     download.onclick = function () {
       self.download()
-      console.log('download')
+      // console.log('download')
     }
     upload.onclick = function() {
       uploadInput.click();
-      console.log('upload')
+      // console.log('upload')
     }
     undo.onclick = function () {
       editor.undo()
-      console.log('undo')
+      // console.log('undo')
     }
     redo.onclick = function () {
       editor.redo()
-      console.log('redo')
+      // console.log('redo')
     }
     clear.onclick = function () {
       editor.setValue('')
-      console.log('clear')
+      // console.log('clear')
     }
     run.onclick = function () {
       self.runIt()
-      console.log('run')
+      // console.log('run')
     }
     uploadInput.oninput = function(e) {
       let file = e.target.files[0];
       self.upload(file, content => {
         editor.setValue(content)
-        console.log('content', content)
+        // console.log('content', content)
       })
-      console.log('oninput', e)
+      // console.log('oninput', e)
     }
     axisCanvas.onmousemove = function(e) {
       const params = {
